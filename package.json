@@ -1,0 +1,16 @@
+{
+  "name": "ai-discovery-event",
+  "version": "1.0.0",
+  "description": "Landing page for AI Discovery: A New Opportunity for Agencies — 5 August 2026",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

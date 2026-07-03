@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Discovery: A New Opportunity for Agencies | 5 August 2026</title>
+  <meta name="description" content="Join Propeller Group & The Growth Architect for a practical workshop on AEO — Answer Engine Optimization. Learn how to make your agency visible where buyers are looking next.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0D0D1A;
+      --navy-mid: #13132A;
+      --navy-light: #1E1E3F;
+      --orange: #FF6B00;
+      --orange-light: #FF8C33;
+      --orange-glow: rgba(255, 107, 0, 0.15);
+      --white: #FFFFFF;
+      --off-white: #F8F7F5;
+      --gray-100: #F0EEE8;
+      --gray-300: #C8C4BC;
+      --gray-500: #8A8680;
+      --gray-700: #4A4642;
+      --text-dark: #1A1A1A;
+      --gradient-hero: linear-gradient(135deg, #0D0D1A 0%, #13132A 40%, #1a0a2e 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(13,13,26,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s ease;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 15px; font-weight: 700; color: var(--white);
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+    .nav-logo-dot { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; }
+    .nav-cta {
+      background: var(--orange); color: var(--white);
+      padding: 10px 24px; border-radius: 6px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: all 0.2s ease;
+      letter-spacing: 0.2px;
+    }
+    .nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+    /* ─── HERO ────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--gradient-hero);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+    }
+    #particles-canvas {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 760px;
+      padding: 120px 48px 80px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,107,0,0.12); border: 1px solid rgba(255,107,0,0.35);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 12px; font-weight: 600; color: var(--orange-light);
+      letter-spacing: 1.2px; text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+    .hero-eyebrow {
+      font-size: 13px; font-weight: 500; color: var(--orange);
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 16px;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 10px;
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+    .hero-title em { font-style: italic; color: var(--orange-light); }
+    .hero-subtitle {
+      font-size: clamp(17px, 2.2vw, 20px);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin: 24px 0 40px;
+      max-width: 580px;
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 44px;
+      animation: fadeUp 0.8s ease 0.35s both;
+    }
+    .hero-meta-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+    .hero-meta-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,107,0,0.12); border: 1px solid rgba(255,107,0,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+    .btn-primary {
+      background: var(--orange); color: var(--white);
+      padding: 16px 32px; border-radius: 8px;
+      font-size: 15px; font-weight: 700;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 32px rgba(255,107,0,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,107,0,0.5); background: var(--orange-light); }
+    .btn-secondary {
+      background: transparent; color: rgba(255,255,255,0.85);
+      padding: 16px 32px; border-radius: 8px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.25s ease;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.4); }
+    .hero-visual {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
+      background: linear-gradient(135deg, transparent 0%, rgba(30,30,63,0.6) 100%);
+      z-index: 1;
+    }
+    .hero-stats {
+      position: absolute; right: 5%; bottom: 8%; z-index: 2;
+      display: flex; flex-direction: column; gap: 12px;
+      animation: fadeUp 0.8s ease 0.55s both;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px); border-radius: 12px;
+      padding: 16px 20px; text-align: left; min-width: 220px;
+    }
+    .stat-number { font-size: 28px; font-weight: 800; color: var(--orange-light); line-height: 1; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 4px; font-weight: 500; }
+    .scroll-indicator {
+      position: absolute; bottom: 32px; left: 48px; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      animation: fadeUp 1s ease 0.8s both;
+    }
+    .scroll-indicator span { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,107,0,0.6), transparent); animation: scrollPulse 2s infinite; }
+    @keyframes scrollPulse { 0%{opacity:0;transform:scaleY(0);transform-origin:top} 50%{opacity:1;transform:scaleY(1)} 100%{opacity:0;transform:scaleY(1);transform-origin:bottom} }
+
+    /* ─── SECTION SHARED ──────────────────── */
+    section { padding: 100px 48px; }
+    .container { max-width: 1160px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px; font-weight: 700; color: var(--orange);
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1; letter-spacing: -1px;
+      margin-bottom: 20px; color: var(--text-dark);
+    }
+    .section-lead {
+      font-size: 18px; color: var(--gray-500); line-height: 1.7; max-width: 640px;
+    }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── WHY NOW ──────────────────────────── */
+    .why-now { background: var(--off-white); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      margin-top: 60px;
+    }
+    .why-card {
+      background: var(--white); border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid var(--gray-100);
+      position: relative; overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .why-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); }
+    .why-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .why-card:hover::before { transform: scaleX(1); }
+    .why-icon { font-size: 36px; margin-bottom: 20px; }
+    .why-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--text-dark); letter-spacing: -0.3px; }
+    .why-card p { font-size: 15px; color: var(--gray-500); line-height: 1.65; }
+    .stat-highlight { font-weight: 800; color: var(--orange); font-size: 42px; display: block; margin-bottom: 8px; }
+
+    /* ─── WHAT YOU'LL LEARN ───────────────── */
+    .learn-section { background: var(--white); }
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 60px; }
+    .learn-list { display: flex; flex-direction: column; gap: 24px; }
+    .learn-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 24px; border-radius: 12px; border: 1px solid var(--gray-100);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .learn-item:hover { border-color: var(--orange); background: rgba(255,107,0,0.02); }
+    .learn-number {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: white; font-weight: 800; font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .learn-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark); }
+    .learn-item p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+    .learn-aside {
+      background: var(--navy); border-radius: 20px;
+      padding: 48px 40px; color: var(--white);
+      position: sticky; top: 100px;
+    }
+    .learn-aside .label { font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .learn-aside h3 { font-family: 'DM Serif Display', serif; font-size: 30px; color: white; line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.5px; }
+    .learn-aside p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 28px; }
+    .partners-row { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .partner-badge {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 14px 18px;
+    }
+    .partner-logo-box {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,107,0,0.15); display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .partner-badge strong { font-size: 14px; font-weight: 700; color: white; display: block; }
+    .partner-badge span { font-size: 12px; color: rgba(255,255,255,0.5); }
+    .event-details-box {
+      margin-top: 32px; padding: 20px;
+      background: rgba(255,107,0,0.08); border: 1px solid rgba(255,107,0,0.2);
+      border-radius: 12px;
+    }
+    .event-details-box .detail-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.8); padding: 6px 0; }
+    .event-details-box .detail-row strong { color: white; font-weight: 600; min-width: 70px; }
+
+    /* ─── AEO QUIZ ────────────────────────── */
+    .quiz-section { background: var(--navy); color: white; padding: 100px 48px; }
+    .quiz-wrapper {
+      max-width: 760px; margin: 60px auto 0;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px; padding: 52px 52px;
+    }
+    .quiz-progress-bar-wrap {
+      height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: 48px;
+    }
+    .quiz-progress-bar {
+      height: 4px; background: linear-gradient(90deg, var(--orange), var(--orange-light));
+      border-radius: 4px; transition: width 0.5s ease;
+      width: 0%;
+    }
+    .quiz-question { display: none; }
+    .quiz-question.active { display: block; animation: fadeUp 0.4s ease; }
+    .quiz-q-number { font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .quiz-q-text { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 3vw, 30px); color: white; line-height: 1.2; margin-bottom: 36px; letter-spacing: -0.5px; }
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+    .quiz-option {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 24px; border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      cursor: pointer; transition: all 0.2s ease;
+      font-size: 15px; color: rgba(255,255,255,0.8);
+    }
+    .quiz-option:hover { border-color: var(--orange); background: rgba(255,107,0,0.08); color: white; }
+    .quiz-option.selected { border-color: var(--orange); background: rgba(255,107,0,0.12); color: white; }
+    .quiz-option-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; transition: all 0.2s ease;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .quiz-option.selected .quiz-option-dot {
+      border-color: var(--orange); background: var(--orange);
+    }
+    .quiz-option.selected .quiz-option-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: white; }
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; }
+    .quiz-btn-back {
+      background: transparent; border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6); padding: 12px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+    }
+    .quiz-btn-back:hover { border-color: rgba(255,255,255,0.4); color: white; }
+    .quiz-btn-next {
+      background: var(--orange); border: none;
+      color: white; padding: 12px 28px; border-radius: 8px;
+      font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
+    }
+    .quiz-btn-next:hover { background: var(--orange-light); transform: translateY(-1px); }
+    .quiz-btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    /* quiz result */
+    .quiz-result { display: none; text-align: center; animation: fadeUp 0.6s ease; }
+    .quiz-result.active { display: block; }
+    .result-score-ring {
+      width: 140px; height: 140px; margin: 0 auto 28px;
+      position: relative;
+    }
+    .result-score-ring svg { transform: rotate(-90deg); }
+    .result-score-ring .score-text {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+    }
+    .score-number { font-size: 38px; font-weight: 900; color: var(--orange-light); line-height: 1; }
+    .score-unit { font-size: 12px; color: rgba(255,255,255,0.5); }
+    .result-badge { display: inline-block; background: rgba(255,107,0,0.15); border: 1px solid rgba(255,107,0,0.3); border-radius: 100px; padding: 6px 20px; font-size: 13px; font-weight: 700; color: var(--orange-light); margin-bottom: 16px; }
+    .result-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: white; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .result-text { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 540px; margin: 0 auto 32px; }
+    .quiz-cta { display: inline-block; background: var(--orange); color: white; padding: 16px 36px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 8px 32px rgba(255,107,0,0.35); }
+    .quiz-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,107,0,0.5); }
+    .quiz-restart { margin-top: 16px; background: none; border: none; color: rgba(255,255,255,0.4); font-size: 13px; cursor: pointer; text-decoration: underline; }
+    .quiz-restart:hover { color: rgba(255,255,255,0.7); }
+
+    /* ─── REGISTRATION FORM ───────────────── */
+    .register-section { background: var(--off-white); }
+    .register-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; margin-top: 60px; }
+    .register-left h2 { font-family: 'DM Serif Display', serif; font-size: 42px; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
+    .register-left p { font-size: 16px; color: var(--gray-500); line-height: 1.7; margin-bottom: 32px; }
+    .event-info-list { display: flex; flex-direction: column; gap: 16px; }
+    .event-info-item { display: flex; align-items: flex-start; gap: 14px; }
+    .event-info-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: white; border: 1px solid var(--gray-100);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .event-info-item strong { font-size: 15px; font-weight: 700; color: var(--text-dark); display: block; }
+    .event-info-item span { font-size: 14px; color: var(--gray-500); }
+    .form-card {
+      background: white; border-radius: 20px;
+      padding: 48px 44px;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.08);
+      border: 1px solid var(--gray-100);
+    }
+    .form-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; color: var(--text-dark); letter-spacing: -0.3px; }
+    .form-card p { font-size: 14px; color: var(--gray-500); margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-field { margin-bottom: 20px; }
+    .form-field label { display: block; font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 7px; letter-spacing: 0.2px; }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%; padding: 13px 16px;
+      border: 1.5px solid var(--gray-100); border-radius: 8px;
+      font-size: 15px; font-family: 'Inter', sans-serif;
+      color: var(--text-dark); background: var(--off-white);
+      transition: all 0.2s ease; outline: none;
+      -webkit-appearance: none;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--orange); background: white;
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.1);
+    }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8680' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px; }
+    .form-submit {
+      width: 100%; padding: 16px;
+      background: var(--orange); color: white;
+      border: none; border-radius: 8px;
+      font-size: 16px; font-weight: 700; font-family: 'Inter', sans-serif;
+      cursor: pointer; transition: all 0.25s ease;
+      box-shadow: 0 6px 24px rgba(255,107,0,0.35);
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255,107,0,0.5); }
+    .form-disclaimer { font-size: 12px; color: var(--gray-300); text-align: center; margin-top: 14px; line-height: 1.6; }
+    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success-icon { font-size: 56px; margin-bottom: 16px; }
+    .form-success h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--text-dark); }
+    .form-success p { font-size: 15px; color: var(--gray-500); max-width: 340px; margin: 0 auto; line-height: 1.6; }
+
+    /* ─── ABOUT PARTNERS ──────────────────── */
+    .partners-section { background: white; }
+    .partners-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 60px; }
+    .partner-card {
+      border: 1px solid var(--gray-100); border-radius: 16px;
+      padding: 40px 32px; text-align: center;
+      transition: all 0.3s ease;
+    }
+    .partner-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.08); transform: translateY(-4px); border-color: transparent; }
+    .partner-card-logo {
+      width: 72px; height: 72px; border-radius: 16px; margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center; font-size: 32px;
+    }
+    .partner-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: var(--text-dark); }
+    .partner-card p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+    .partner-tag { display: inline-block; margin-top: 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); }
+
+    /* ─── SOCIAL PROOF ────────────────────── */
+    .proof-section { background: var(--navy); padding: 80px 48px; }
+    .proof-bar { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+    .proof-item { text-align: center; }
+    .proof-num { font-size: 40px; font-weight: 900; color: var(--orange-light); font-family: 'DM Serif Display', serif; }
+    .proof-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; font-weight: 500; max-width: 140px; }
+
+    /* ─── FOOTER ──────────────────────────── */
+    footer {
+      background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-brand { font-size: 14px; color: rgba(255,255,255,0.5); }
+    .footer-brand strong { color: rgba(255,255,255,0.8); font-weight: 700; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ─── ANIMATIONS ──────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .floating { animation: float 4s ease-in-out infinite; }
+
+    /* ─── RESPONSIVE ──────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      section { padding: 70px 24px; }
+      .hero-content { padding: 100px 24px 60px; }
+      .hero-stats { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .learn-grid { grid-template-columns: 1fr; }
+      .learn-aside { position: static; }
+      .register-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: 1fr; }
+      .proof-bar { gap: 32px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .quiz-wrapper { padding: 32px 24px; }
+      .form-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    Propeller × The Growth Architect
+  </a>
+  <a href="#register" class="nav-cta">Reserve Your Spot →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>5 August 2026 · London</div>
+    <p class="hero-eyebrow">A Workshop for Agencies</p>
+    <h1 class="hero-title">AI Discovery:<br><em>A New Opportunity</em><br>for Agencies</h1>
+    <p class="hero-subtitle">AI answer engines are changing how buyers find agencies. Learn how to show up — before your competitors do.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-icon">📅</div>
+        Tuesday, 5 August 2026
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-icon">📍</div>
+        60 Margaret Street, London W1W 8TF
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-icon">⏱</div>
+        Half-day Workshop
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#register" class="btn-primary">Reserve Your Seat →</a>
+      <a href="#quiz" class="btn-secondary">Take the AEO Quiz</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card floating">
+      <div class="stat-number">73%</div>
+      <div class="stat-label">of buyers use AI to research agencies before making contact</div>
+    </div>
+    <div class="stat-card floating" style="animation-delay: 0.5s">
+      <div class="stat-number">1,850%</div>
+      <div class="stat-label">growth in AI-sourced leads reported by early AEO adopters</div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="why-now">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Why This Matters Now</p>
+      <h2 class="section-title">The discovery channel<br>has shifted.</h2>
+      <p class="section-lead">ChatGPT, Gemini, and Perplexity are now the first stop for buyers researching agencies. If you're not in the answer, you're not in the running.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-icon">🤖</div>
+        <h3>Buyers Ask AI First</h3>
+        <p>Before they ever visit your website or Google your name, potential clients are asking AI "who are the best B2B PR agencies in London?" — and getting a shortlist that doesn't include you.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">📊</div>
+        <h3>Your Competitors Are Already There</h3>
+        <p>HubSpot's data shows AI is recommending brands right now. Every day without an AEO strategy is a day a competitor is being recommended to your next client.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">⚡</div>
+        <h3>The Window Is Still Open</h3>
+        <p>AEO is nascent. The agencies who move now will lock in visibility advantage while others are still debating whether to care. This workshop is about moving first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="learn-section" id="agenda">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Workshop Agenda</p>
+      <h2 class="section-title">What you'll walk away with.</h2>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-list">
+        <div class="learn-item fade-in">
+          <div class="learn-number">01</div>
+          <div>
+            <h4>What AEO Actually Is (and Isn't)</h4>
+            <p>Cut through the hype. Understand the mechanics of how AI answer engines like ChatGPT, Gemini, and Perplexity surface brands — and what that means for your new business pipeline.</p>
+          </div>
+        </div>
+        <div class="learn-item fade-in">
+          <div class="learn-number">02</div>
+          <div>
+            <h4>Your Agency's AI Visibility Score</h4>
+            <p>Using HubSpot's AEO tool, we'll demonstrate live how to audit your brand's visibility — your score, your share of voice vs competitors, and your sentiment across AI engines.</p>
+          </div>
+        </div>
+        <div class="learn-item fade-in">
+          <div class="learn-number">03</div>
+          <div>
+            <h4>Citation Analysis: Why AI Cites Your Competitors</h4>
+            <p>Discover which domains and content types are driving AI mentions for agencies in your category — and exactly what you can do to get cited instead.</p>
+          </div>
+        </div>
+        <div class="learn-item fade-in">
+          <div class="learn-number">04</div>
+          <div>
+            <h4>Prompt Strategy for Agencies</h4>
+            <p>Learn which buyer queries to track, how to reverse-engineer the prompts your ideal clients are using, and how to build content that answers them.</p>
+          </div>
+        </div>
+        <div class="learn-item fade-in">
+          <div class="learn-number">05</div>
+          <div>
+            <h4>Your 90-Day AEO Action Plan</h4>
+            <p>Leave with a prioritised, practical playbook — not a vague framework. Real actions you can start on Monday: content to create, pages to fix, third-party sites to target.</p>
+          </div>
+        </div>
+        <div class="learn-item fade-in">
+          <div class="learn-number">06</div>
+          <div>
+            <h4>The New Business Opportunity for Agencies</h4>
+            <p>Beyond your own visibility — how to position AEO as a service for your clients. What to charge, how to pitch it, and why it's a retention play as much as an acquisition one.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="learn-aside">
+          <p class="label">In Partnership With</p>
+          <h3>Practical. Hands-on. Built for agencies.</h3>
+          <p>This is a working session, not a lecture. Every element is designed for agency teams who need to move fast and deliver results — for their own brand and their clients'.</p>
+          <div class="partners-row">
+            <div class="partner-badge">
+              <div class="partner-logo-box">🔶</div>
+              <div>
+                <strong>HubSpot AEO</strong>
+                <span>BD100 Awards Partner · AEO Platform</span>
+              </div>
+            </div>
+            <div class="partner-badge">
+              <div class="partner-logo-box">🏗</div>
+              <div>
+                <strong>The Growth Architect</strong>
+                <span>HubSpot Partner · Workshop Facilitator</span>
+              </div>
+            </div>
+            <div class="partner-badge">
+              <div class="partner-logo-box">◆</div>
+              <div>
+                <strong>Propeller Group</strong>
+                <span>Global B2B PR & Growth Marketing</span>
+              </div>
+            </div>
+          </div>
+          <div class="event-details-box">
+            <div class="detail-row"><strong>📅 Date</strong>Tuesday 5 August 2026</div>
+            <div class="detail-row"><strong>📍 Venue</strong>60 Margaret Street, London W1W 8TF</div>
+            <div class="detail-row"><strong>🎯 For</strong>Agency leaders, BD & marketing teams</div>
+            <div class="detail-row"><strong>💺 Seats</strong>Limited to 30 attendees</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<section class="proof-section">
+  <div class="container">
+    <div class="proof-bar">
+      <div class="proof-item fade-in">
+        <div class="proof-num" data-count="73">0</div>
+        <div class="proof-label">% of B2B buyers use AI tools to research vendors</div>
+      </div>
+      <div class="proof-item fade-in">
+        <div class="proof-num" data-count="1850">0</div>
+        <div class="proof-label">% growth in AI-sourced leads for early adopters</div>
+      </div>
+      <div class="proof-item fade-in">
+        <div class="proof-num" data-count="3">0</div>
+        <div class="proof-label">major AI engines tracked: ChatGPT, Gemini & Perplexity</div>
+      </div>
+      <div class="proof-item fade-in">
+        <div class="proof-num" data-count="30">0</div>
+        <div class="proof-label">limited seats — intimate, high-impact format</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AEO QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto;" class="fade-in">
+      <p class="section-label" style="color:var(--orange)">AEO Readiness Check</p>
+      <h2 class="section-title" style="color:white">How visible is your agency<br>to AI right now?</h2>
+      <p class="section-lead" style="color:rgba(255,255,255,0.55); margin:0 auto;">Six quick questions. 60 seconds. Find out where your agency stands — and what to do next.</p>
+    </div>
+    <div class="quiz-wrapper fade-in" id="quiz-container">
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar" id="quiz-progress"></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="quiz-question active" data-q="0">
+        <p class="quiz-q-number">Question 1 of 6</p>
+        <p class="quiz-q-text">Has your agency ever searched for itself on ChatGPT, Perplexity, or Gemini?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="2"><div class="quiz-option-dot"></div>Yes — and we know what they say about us</div>
+          <div class="quiz-option" data-value="1"><div class="quiz-option-dot"></div>We've done it once or twice, informally</div>
+          <div class="quiz-option" data-value="0"><div class="quiz-option-dot"></div>No — we've never checked</div>
+        </div>
+        <div class="quiz-nav">
+          <div></div>
+          <button class="quiz-btn-next" disabled onclick="nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-question" data-q="1">
+        <p class="quiz-q-number">Question 2 of 6</p>
+        <p class="quiz-q-text">Do you know how often AI tools recommend your agency to potential clients?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="3"><div class="quiz-option-dot"></div>Yes — we track our AI visibility score regularly</div>
+          <div class="quiz-option" data-value="1"><div class="quiz-option-dot"></div>We have a rough idea but no formal tracking</div>
+          <div class="quiz-option" data-value="0"><div class="quiz-option-dot"></div>We have no idea</div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="prevQuestion()">← Back</button>
+          <button class="quiz-btn-next" disabled onclick="nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-question" data-q="2">
+        <p class="quiz-q-number">Question 3 of 6</p>
+        <p class="quiz-q-text">Have any of your clients asked you about AI search visibility or AEO?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="3"><div class="quiz-option-dot"></div>Yes — it's come up in briefs or strategy discussions</div>
+          <div class="quiz-option" data-value="1"><div class="quiz-option-dot"></div>Not directly, but the topic of AI has come up</div>
+          <div class="quiz-option" data-value="0"><div class="quiz-option-dot"></div>Not yet — but I expect it soon</div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="prevQuestion()">← Back</button>
+          <button class="quiz-btn-next" disabled onclick="nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-question" data-q="3">
+        <p class="quiz-q-number">Question 4 of 6</p>
+        <p class="quiz-q-text">Does your agency have a strategy for appearing in AI-generated answers?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="3"><div class="quiz-option-dot"></div>Yes — we're actively optimising for AEO</div>
+          <div class="quiz-option" data-value="2"><div class="quiz-option-dot"></div>We're building one now</div>
+          <div class="quiz-option" data-value="1"><div class="quiz-option-dot"></div>It's on the roadmap but we haven't started</div>
+          <div class="quiz-option" data-value="0"><div class="quiz-option-dot"></div>No strategy at all</div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="prevQuestion()">← Back</button>
+          <button class="quiz-btn-next" disabled onclick="nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="quiz-question" data-q="4">
+        <p class="quiz-q-number">Question 5 of 6</p>
+        <p class="quiz-q-text">Do you know which of your content pages get cited by AI engines like ChatGPT?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="3"><div class="quiz-option-dot"></div>Yes — we run citation analysis regularly</div>
+          <div class="quiz-option" data-value="1"><div class="quiz-option-dot"></div>We know roughly, based on traffic patterns</div>
+          <div class="quiz-option" data-value="0"><div class="quiz-option-dot"></div>What's citation analysis?</div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="prevQuestion()">← Back</button>
+          <button class="quiz-btn-next" disabled onclick="nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="quiz-question" data-q="5">
+        <p class="quiz-q-number">Question 6 of 6</p>
+        <p class="quiz-q-text">How would you describe your agency's AEO position compared to your competitors?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="4"><div class="quiz-option-dot"></div>We're ahead — actively testing and optimising</div>
+          <div class="quiz-option" data-value="2"><div class="quiz-option-dot"></div>We're about level with most agencies</div>
+          <div class="quiz-option" data-value="1"><div class="quiz-option-dot"></div>We're probably behind, honestly</div>
+          <div class="quiz-option" data-value="0"><div class="quiz-option-dot"></div>We're not on the radar at all</div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="prevQuestion()">← Back</button>
+          <button class="quiz-btn-next" disabled onclick="showResult()">See My Score →</button>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="quiz-result" id="quiz-result">
+        <div class="result-score-ring">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+            <circle id="score-circle" cx="70" cy="70" r="60" fill="none" stroke="url(#scoreGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="377"/>
+            <defs>
+              <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FF6B00"/>
+                <stop offset="100%" stop-color="#FF8C33"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="score-text">
+            <span class="score-number" id="score-display">0</span>
+            <span class="score-unit">/100</span>
+          </div>
+        </div>
+        <div class="result-badge" id="result-badge">Loading...</div>
+        <h3 class="result-title" id="result-title">Loading...</h3>
+        <p class="result-text" id="result-text">Loading...</p>
+        <a href="#register" class="quiz-cta">Reserve Your Seat at the Workshop →</a>
+        <br>
+        <button class="quiz-restart" onclick="restartQuiz()">Retake the quiz</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="container">
+    <div style="text-align:center; max-width:520px; margin:0 auto;" class="fade-in">
+      <p class="section-label">Your Workshop Partners</p>
+      <h2 class="section-title">Who's in the room.</h2>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card fade-in">
+        <div class="partner-card-logo" style="background:#fff5ed; border:1px solid #ffe0c0;">◆</div>
+        <h3>Propeller Group</h3>
+        <p>A global B2B agency with an integrated approach to PR, content, and growth marketing — helping agencies shape their reputation and drive growth. BD100 Awards organisers.</p>
+        <span class="partner-tag">Host · BD100 Partner</span>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-card-logo" style="background:#fff5ed; border:1px solid #ffe0c0;">🔶</div>
+        <h3>HubSpot AEO</h3>
+        <p>HubSpot's new Answer Engine Optimisation platform — track your brand visibility across ChatGPT, Gemini, and Perplexity. Get recommendations. Act on them. All inside HubSpot.</p>
+        <span class="partner-tag">Technology Partner · BD100 Partner</span>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-card-logo" style="background:#fff5ed; border:1px solid #ffe0c0;">🏗</div>
+        <h3>The Growth Architect</h3>
+        <p>A HubSpot partner specialising in practical growth strategy for agencies. Workshop facilitator and implementation expert — turning insight into action plans that actually get used.</p>
+        <span class="partner-tag">HubSpot Partner · Facilitator</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register-section" id="register">
+  <div class="container">
+    <div class="register-grid">
+      <div class="register-left fade-in">
+        <p class="section-label">Register Interest</p>
+        <h2>Secure your<br>seat now.</h2>
+        <p>This is an invitation-only workshop for a small group of agency leaders. Places are limited to 30 to keep it practical and valuable. Let us know you're interested and we'll confirm your spot.</p>
+        <div class="event-info-list">
+          <div class="event-info-item">
+            <div class="event-info-icon">📅</div>
+            <div>
+              <strong>Tuesday 5 August 2026</strong>
+              <span>Half-day format — morning session</span>
+            </div>
+          </div>
+          <div class="event-info-item">
+            <div class="event-info-icon">📍</div>
+            <div>
+              <strong>Propeller Group HQ</strong>
+              <span>60 Margaret Street, London W1W 8TF</span>
+            </div>
+          </div>
+          <div class="event-info-item">
+            <div class="event-info-icon">🎯</div>
+            <div>
+              <strong>Who Should Attend</strong>
+              <span>Agency MDs, Heads of BD, CMOs, Client Strategy leads</span>
+            </div>
+          </div>
+          <div class="event-info-item">
+            <div class="event-info-icon">💰</div>
+            <div>
+              <strong>Cost</strong>
+              <span>Complimentary — spaces are limited</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="form-card">
+          <div id="form-content">
+            <h3>Register Your Interest</h3>
+            <p>Fill in your details and we'll be in touch to confirm your place.</p>
+            <form id="register-form" onsubmit="submitForm(event)">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="fname">First Name *</label>
+                  <input type="text" id="fname" name="fname" placeholder="Jane" required>
+                </div>
+                <div class="form-field">
+                  <label for="lname">Last Name *</label>
+                  <input type="text" id="lname" name="lname" placeholder="Smith" required>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" placeholder="jane@agency.com" required>
+              </div>
+              <div class="form-field">
+                <label for="agency">Agency / Company *</label>
+                <input type="text" id="agency" name="agency" placeholder="Your Agency Name" required>
+              </div>
+              <div class="form-field">
+                <label for="role">Your Role *</label>
+                <select id="role" name="role" required>
+                  <option value="">Select your role</option>
+                  <option>Managing Director / CEO</option>
+                  <option>Chief Marketing Officer</option>
+                  <option>Head of Business Development</option>
+                  <option>Strategy Director</option>
+                  <option>Client Services Director</option>
+                  <option>PR Director</option>
+                  <option>Content Director</option>
+                  <option>Other Senior Leader</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="challenge">What's your biggest challenge with AI visibility right now?</label>
+                <textarea id="challenge" name="challenge" placeholder="e.g. We have no idea how our brand appears in ChatGPT, and I'm worried competitors are ahead of us..."></textarea>
+              </div>
+              <button type="submit" class="form-submit">Reserve My Seat →</button>
+              <p class="form-disclaimer">Your details are held securely and used only to confirm your place at the workshop. We won't share them with third parties.</p>
+            </form>
+          </div>
+          <div class="form-success" id="form-success">
+            <div class="form-success-icon">🎉</div>
+            <h3>You're on the list!</h3>
+            <p>Thanks for registering your interest. We'll be in touch shortly to confirm your place at AI Discovery on 5 August.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <strong>AI Discovery: A New Opportunity for Agencies</strong><br>
+    Hosted by Propeller Group · 60 Margaret Street, London W1W 8TF
+  </div>
+  <div class="footer-links">
+    <a href="https://www.propellergroup.com" target="_blank">Propeller Group</a>
+    <a href="https://www.hubspot.com/products/aeo" target="_blank">HubSpot AEO</a>
+    <a href="mailto:info@propellergroup.com">Contact Us</a>
+  </div>
+</footer>
+
+<script>
+/* ─── PARTICLES ─────────────────────────── */
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function createParticle() {
+  return {
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
+    radius: Math.random() * 2 + 0.5,
+    opacity: Math.random() * 0.4 + 0.1,
+    color: Math.random() > 0.8 ? '#FF6B00' : '#ffffff',
+  };
+}
+
+for (let i = 0; i < 80; i++) particles.push(createParticle());
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.opacity;
+    ctx.fill();
+  });
+  // draw connections
+  ctx.globalAlpha = 1;
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 100) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(255,107,0,${0.06 * (1 - dist/100)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+/* ─── SCROLL ANIMATIONS ─────────────────── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+/* ─── COUNTER ANIMATION ─────────────────── */
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.counted) {
+      entry.target.dataset.counted = 'true';
+      const target = parseInt(entry.target.dataset.count);
+      const duration = 1800;
+      const start = Date.now();
+      const tick = () => {
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        entry.target.textContent = Math.round(ease * target).toLocaleString() + (target > 100 ? '%' : (target === 3 ? '' : ''));
+        if (progress < 1) requestAnimationFrame(tick);
+        else entry.target.textContent = target.toLocaleString() + (target >= 73 ? '%' : '');
+      };
+      tick();
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+/* ─── NAVBAR SCROLL ─────────────────────── */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 80) nav.style.background = 'rgba(13,13,26,0.97)';
+  else nav.style.background = 'rgba(13,13,26,0.85)';
+});
+
+/* ─── QUIZ ──────────────────────────────── */
+let currentQ = 0;
+const answers = [];
+const maxScore = [2, 3, 3, 3, 3, 4]; // max per question
+
+function updateProgress() {
+  const pct = (currentQ / 6) * 100;
+  document.getElementById('quiz-progress').style.width = pct + '%';
+}
+
+document.querySelectorAll('.quiz-options').forEach(optionGroup => {
+  optionGroup.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.addEventListener('click', function() {
+      optionGroup.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      this.classList.add('selected');
+      const q = this.closest('.quiz-question');
+      q.querySelector('.quiz-btn-next').disabled = false;
+      answers[parseInt(q.dataset.q)] = parseInt(this.dataset.value);
+    });
+  });
+});
+
+function nextQuestion() {
+  const questions = document.querySelectorAll('.quiz-question');
+  questions[currentQ].classList.remove('active');
+  currentQ++;
+  if (currentQ < questions.length) {
+    questions[currentQ].classList.add('active');
+    updateProgress();
+  }
+}
+
+function prevQuestion() {
+  const questions = document.querySelectorAll('.quiz-question');
+  questions[currentQ].classList.remove('active');
+  currentQ--;
+  questions[currentQ].classList.add('active');
+  updateProgress();
+}
+
+function showResult() {
+  const questions = document.querySelectorAll('.quiz-question');
+  questions[currentQ].classList.remove('active');
+  document.getElementById('quiz-progress').style.width = '100%';
+
+  const totalMax = maxScore.reduce((a, b) => a + b, 0);
+  const totalScore = answers.reduce((a, b) => (a || 0) + (b || 0), 0);
+  const score = Math.round((totalScore / totalMax) * 100);
+
+  let badge, title, text;
+  if (score <= 25) {
+    badge = '⚠️ AI Search Blind Spot'; title = "You're invisible to AI right now.";
+    text = "Your agency almost certainly isn't being recommended by ChatGPT, Gemini, or Perplexity — and your competitors may be. The good news: the window to act is still open. This workshop was designed specifically for where you are.";
+  } else if (score <= 50) {
+    badge = '🔍 Early Explorer'; title = "Aware, but without a strategy.";
+    text = "You know AEO matters, but haven't built the systems to act on it yet. You're ahead of most agencies in awareness, but awareness alone won't win deals. Come to the workshop ready to build your plan.";
+  } else if (score <= 75) {
+    badge = '📈 AEO Aware'; title = "You're moving in the right direction.";
+    text = "You're ahead of the majority of agencies — you track visibility and have the beginnings of a strategy. This workshop will sharpen your approach and show you the gaps you might be missing.";
+  } else {
+    badge = '🏆 AEO Leader'; title = "You're ahead of the curve.";
+    text = "Impressive. You're already doing more than most agencies to win in AI search. The workshop will help you compound that advantage — and give you a framework to turn your AEO know-how into a client-facing service.";
+  }
+
+  document.getElementById('result-badge').textContent = badge;
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-text').textContent = text;
+
+  const result = document.getElementById('quiz-result');
+  result.classList.add('active');
+
+  // Animate score ring
+  const circumference = 377;
+  const offset = circumference - (score / 100) * circumference;
+  setTimeout(() => {
+    document.getElementById('score-circle').style.transition = 'stroke-dashoffset 1.2s ease';
+    document.getElementById('score-circle').style.strokeDashoffset = offset;
+    let n = 0;
+    const interval = setInterval(() => {
+      n = Math.min(n + 2, score);
+      document.getElementById('score-display').textContent = n;
+      if (n >= score) clearInterval(interval);
+    }, 20);
+  }, 100);
+}
+
+function restartQuiz() {
+  currentQ = 0;
+  answers.length = 0;
+  document.getElementById('quiz-result').classList.remove('active');
+  document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  document.querySelectorAll('.quiz-btn-next').forEach(b => b.disabled = true);
+  document.getElementById('quiz-progress').style.width = '0%';
+  document.getElementById('score-circle').style.strokeDashoffset = '377';
+  document.getElementById('score-display').textContent = '0';
+  document.querySelectorAll('.quiz-question')[0].classList.add('active');
+}
+
+/* ─── FORM SUBMIT ───────────────────────── */
+function submitForm(e) {
+  e.preventDefault();
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  // Simulate async submission
+  setTimeout(() => {
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }, 1200);
+}
+</script>
+
+</body>
+</html>
