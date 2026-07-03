@@ -1111,7 +1111,42 @@ function toggleFaq(el) {
 }
 
 /* FORM */
-function submitForm(e){ e.preventDefault(); const b=document.querySelector('.form-submit'); b.textContent='Submitting...'; b.disabled=true; setTimeout(()=>{ document.getElementById('form-content').style.display='none'; document.getElementById('form-success').style.display='block'; },1200); }
+async function submitForm(e) {
+  e.preventDefault();
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  const payload = {
+    fname: document.getElementById('fname').value,
+    lname: document.getElementById('lname').value,
+    email: document.getElementById('email').value,
+    agency: document.getElementById('agency').value,
+    role: document.getElementById('role').value,
+    challenge: document.getElementById('challenge').value,
+  };
+
+  try {
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('form-content').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email info@propellergroup.com');
+    }
+  } catch {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email info@propellergroup.com');
+  }
+}
 </script>
 </body>
 </html>
