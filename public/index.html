@@ -982,7 +982,7 @@
           <div id="form-content">
             <h3>Register Your Interest</h3>
             <p>Fill in your details and we'll be in touch to confirm your place.</p>
-            <form id="register-form" onsubmit="submitForm(event)">
+            <div id="register-form" data-submit="submitForm(event)">
               <div class="form-row">
                 <div class="form-field">
                   <label for="fname">First Name *</label>
@@ -1019,9 +1019,9 @@
                 <label for="challenge">What's your biggest challenge with AI visibility right now?</label>
                 <textarea id="challenge" name="challenge" placeholder="e.g. We have no idea how our brand appears in ChatGPT, and I'm worried competitors are ahead of us..."></textarea>
               </div>
-              <button type="submit" class="form-submit">Reserve My Seat →</button>
+              <button type="button" class="form-submit" onclick="submitForm(event)">Reserve My Seat →</button>
               <p class="form-note">Your details are held securely and used only to confirm your place. We won't share them with third parties.</p>
-            </form>
+            </div>
           </div>
           <div class="form-success" id="form-success">
             <div class="success-check">
