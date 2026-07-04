@@ -21,10 +21,33 @@ const TOKEN = process.env.HUBSPOT_ACCESS_TOKEN;
 const BASE  = 'https://api.hubapi.com';
 const AUTH  = { 'Authorization': `Bearer ${TOKEN}`, 'Content-Type': 'application/json' };
 
-const TEMPLATE_PATH = 'custom/email/aeo-confirmation.html';
-const EMAIL_NAME    = 'AEO Discovery — Registration Confirmation';
-const SUBJECT       = "You're registered — AEO Discovery, 5 August";
-const PREVIEW_TEXT  = 'Your spot is confirmed. Here\'s everything you need to know before the day.';
+// ── Config: change EMAIL_TYPE to switch which email is deployed ──────────────
+const EMAIL_TYPE = process.argv[2] === 'invite' ? 'invite' : 'confirmation';
+
+const CONFIGS = {
+  confirmation: {
+    templatePath: 'custom/email/aeo-confirmation.html',
+    htmlFile:     '../emails/confirmation.html',
+    name:         'AEO Discovery — Registration Confirmation',
+    subject:      "You're registered — AEO Discovery, 5 August",
+    previewText:  "Your spot is confirmed. We'll be in touch with full details soon.",
+    type:         'AUTOMATED_EMAIL',
+  },
+  invite: {
+    templatePath: 'custom/email/aeo-invite.html',
+    htmlFile:     '../emails/invite.html',
+    name:         'AEO Discovery — Invitation',
+    subject:      "You're invited — AEO Discovery, 5 August, London",
+    previewText:  "A practical morning on AEO — how to get your agency's clients found by AI.",
+    type:         'BATCH_EMAIL',
+  },
+};
+
+const CONFIG      = CONFIGS[EMAIL_TYPE];
+const TEMPLATE_PATH = CONFIG.templatePath;
+const EMAIL_NAME    = CONFIG.name;
+const SUBJECT       = CONFIG.subject;
+const PREVIEW_TEXT  = CONFIG.previewText;
 const FROM_NAME     = 'Propeller Group';
 const REPLY_TO      = 'info@propellergroup.com';
 
@@ -97,7 +120,7 @@ async function upsertEmail() {
     from:        { fromName: FROM_NAME, replyTo: REPLY_TO },
     content:     { templatePath: TEMPLATE_PATH },
     emailTemplateMode: 'DESIGN_MANAGER',
-    type:          'AUTOMATED_EMAIL',   // makes it available in workflows
+    type:          CONFIG.type,
     sendOnPublish: false,
   };
 
@@ -126,7 +149,8 @@ async function upsertEmail() {
 (async () => {
   console.log('\n📧  Deploying AEO Discovery confirmation email...');
 
-  const html = fs.readFileSync(path.join(__dirname, '../emails/confirmation.html'), 'utf8');
+  console.log(`    Type: ${EMAIL_TYPE.toUpperCase()}`);
+  const html = fs.readFileSync(path.join(__dirname, CONFIG.htmlFile), 'utf8');
 
   await upsertTemplate(html);
   const email = await upsertEmail();
