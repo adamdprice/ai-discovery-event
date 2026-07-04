@@ -97,6 +97,7 @@ async function upsertEmail() {
     from:        { fromName: FROM_NAME, replyTo: REPLY_TO },
     content:     { templatePath: TEMPLATE_PATH },
     emailTemplateMode: 'DESIGN_MANAGER',
+    type:          'AUTOMATED_EMAIL',   // makes it available in workflows
     sendOnPublish: false,
   };
 
